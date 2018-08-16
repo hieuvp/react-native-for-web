@@ -18,6 +18,18 @@
 
 - [`Custom Setup`](https://github.com/necolas/react-native-web/blob/master/packages/website/guides/getting-started.md#configuring-a-module-bundler)
 
+- `webpack.config.js`
+
+```javascript
+alias: {
+  './assets/images/expo-icon.png': './assets/images/expo-icon@2x.png',
+  './assets/images/slack-icon.png': './assets/images/slack-icon@2x.png',
+  '@expo/vector-icons': 'expo-web',
+  expo: 'expo-web',
+  'react-native': 'react-native-web',
+},
+```
+
 - `React Native Scripts`
 
 ```json
