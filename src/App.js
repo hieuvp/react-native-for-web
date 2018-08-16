@@ -3,13 +3,13 @@ import {
   StyleSheet,
   View
 } from 'react-native';
-import SimpleView from './SimpleView';
+import AnimatedView from './AnimatedView';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <SimpleView />
+        <AnimatedView />
       </View>
     );
   }
