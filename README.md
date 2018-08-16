@@ -8,6 +8,7 @@
 
 - Who is using React Native in production web apps?
 
+- [`Compatibility with React Native`](https://github.com/necolas/react-native-web#compatibility-with-react-native)
 
 ## Installation
 
