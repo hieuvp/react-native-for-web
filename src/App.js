@@ -3,13 +3,14 @@ import {
   StyleSheet,
   View
 } from 'react-native';
-import AnimatedView from './AnimatedView';
+
+import TicTacToe from './TicTacToe';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <AnimatedView />
+        <TicTacToe />
       </View>
     );
   }
