@@ -73,7 +73,9 @@ class Board {
 class Cell extends Component {
 
   cellStyle() {
-    switch (this.props.player) {
+    const { player } = this.props;
+
+    switch (player) {
       case 1:
         return styles.cellX;
       case 2:
@@ -84,7 +86,9 @@ class Cell extends Component {
   }
 
   textStyle() {
-    switch (this.props.player) {
+    const { player } = this.props;
+
+    switch (player) {
       case 1:
         return styles.cellTextX;
       case 2:
@@ -95,7 +99,9 @@ class Cell extends Component {
   }
 
   textContents() {
-    switch (this.props.player) {
+    const { player } = this.props;
+
+    switch (player) {
       case 1:
         return 'X';
       case 2:
@@ -112,7 +118,9 @@ class Cell extends Component {
       <TouchableHighlight
         onPress={onPress}
         underlayColor="transparent"
-        activeOpacity={0.5}>
+        activeOpacity={0.5}
+        style={styles.cellContainer}
+      >
         <View style={[styles.cell, this.cellStyle()]}>
           <Text style={[styles.cellText, this.textStyle()]}>
             {this.textContents()}
@@ -157,9 +165,11 @@ const GameEndOverlay = (props) => {
 class TicTacToe extends Component {
   constructor(props) {
     super(props);
-
-    this.initialState = { board: new Board(), player: 1 };
     this.state = this.initialState;
+  }
+
+  get initialState() {
+    return { board: new Board(), player: 1 };
   }
 
   restartGame = () => {
@@ -167,22 +177,28 @@ class TicTacToe extends Component {
   };
 
   nextPlayer = () => {
-    return this.state.player === 1 ? 2 : 1;
+    const { player } = this.state;
+
+    return player === 1 ? 2 : 1;
   };
 
   handleCellPress = (row, col) => () => {
-    if (this.state.board.hasMark(row, col)) {
+    const { board, player } = this.state;
+
+    if (board.hasMark(row, col)) {
       return;
     }
 
     this.setState({
-      board: this.state.board.mark(row, col, this.state.player),
+      board: board.mark(row, col, player),
       player: this.nextPlayer(),
     });
   };
 
   render() {
-    const rows = this.state.board.grid.map((cells, row) =>
+    const { board } = this.state;
+
+    const rows = board.grid.map((cells, row) =>
       <View key={'row' + row} style={styles.row}>
         {cells.map((player, col) =>
           <Cell
@@ -196,11 +212,12 @@ class TicTacToe extends Component {
 
     return (
       <View style={styles.container}>
+        <Text style={styles.title}>ShopBack Vietnam</Text>
         <View style={styles.board}>
           {rows}
         </View>
         <GameEndOverlay
-          board={this.state.board}
+          board={board}
           onRestart={this.restartGame}
         />
       </View>
@@ -215,13 +232,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'white'
   },
+  title: {
+    fontSize: 20,
+    marginBottom: 30,
+    fontWeight: 'bold'
+  },
   board: {
+    flexDirection: 'column',
     padding: 5,
-    backgroundColor: '#47525d',
     borderRadius: 10,
+    backgroundColor: '#47525d',
   },
   row: {
     flexDirection: 'row',
+  },
+  cellContainer: {
+    width: 90,
+    height: 90
   },
   cell: {
     width: 80,

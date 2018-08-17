@@ -40,4 +40,10 @@ alias: {
 
 ## Simple View
 
+- `<View />`, `<Text />`
+
+- Inspect elements
+
+- File Extension: `*.ios`, `*.android`, `*.web`
+
 ## Animated View
