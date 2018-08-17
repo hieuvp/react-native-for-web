@@ -6,6 +6,7 @@ import {
   View,
 } from 'react-native';
 
+// Model
 class Board {
 
   constructor() {
@@ -70,6 +71,8 @@ class Board {
   }
 }
 
+// Cell X
+// Cell O
 class Cell extends Component {
 
   cellStyle() {
@@ -131,6 +134,7 @@ class Cell extends Component {
   }
 }
 
+// Game End
 const GameEndOverlay = (props) => {
   const { board, onRestart } = props;
   const tie = board.tie();
@@ -162,6 +166,7 @@ const GameEndOverlay = (props) => {
   );
 };
 
+// Main Component
 class TicTacToe extends Component {
   constructor(props) {
     super(props);
