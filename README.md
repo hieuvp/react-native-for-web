@@ -55,6 +55,16 @@
 
 - [`Custom Setup`](https://github.com/necolas/react-native-web/blob/master/packages/website/guides/getting-started.md#configuring-a-module-bundler)
 
+- `React Native Scripts`
+
+```json
+"android": "react-native-scripts android",
+"ios": "react-native-scripts ios",
+"web": "webpack-dev-server -d --config ./webpack.config.js  --inline --hot --colors --content-base public/ --history-api-fallback",
+```
+
+## Simple View
+
 - `webpack.config.js`
 
 ```javascript
@@ -66,16 +76,6 @@ alias: {
   'react-native': 'react-native-web',
 },
 ```
-
-- `React Native Scripts`
-
-```json
-"android": "react-native-scripts android",
-"ios": "react-native-scripts ios",
-"web": "webpack-dev-server -d --config ./webpack.config.js  --inline --hot --colors --content-base public/ --history-api-fallback",
-```
-
-## Simple View
 
 - Inspect elements
 
