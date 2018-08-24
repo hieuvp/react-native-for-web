@@ -65,7 +65,7 @@
 
 ## Simple View
 
-![Simple View](screenshots/simple-view.png)
+<img width="300" alt="Simple View" src="screenshots/simple-view.png">
 
 - `webpack.config.js`
 
@@ -89,10 +89,10 @@ alias: {
 
 ## Animated View
 
-![Animated View](screenshots/animated-view.png)
+<img width="250" alt="Animated View" src="screenshots/animated-view.png">
 
 - [`Animated API`](http://necolas.github.io/react-native-web/examples/)
 
 ## Tic Tac Toe
 
-![Tic Tac Toe](screenshots/tic-tac-toe.png)
+<img width="300" alt="Tic Tac Toe" src="screenshots/tic-tac-toe.png">
