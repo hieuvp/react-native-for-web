@@ -65,6 +65,8 @@
 
 ## Simple View
 
+![Simple View](screenshots/simple-view.png)
+
 - `webpack.config.js`
 
 ```javascript
@@ -77,16 +79,20 @@ alias: {
 },
 ```
 
-- Inspect elements
+- Element Inspection
 
-- [`Multi-platform Applications`](https://github.com/necolas/react-native-web/blob/master/packages/website/guides/getting-started.md#multi-platform-applications)
+## Multi-platform Applications
+
+![Multi-platform Applications](screenshots/multi-platform-applications.png)
 
 - File Extension: `*.ios`, `*.android`, `*.web`
 
 ## Animated View
 
+![Animated View](screenshots/animated-view.png)
+
 - [`Animated API`](http://necolas.github.io/react-native-web/examples/)
 
-## Game - TicTacToe
+## Tic Tac Toe
 
-## Q&A
+![Tic Tac Toe](screenshots/tic-tac-toe.png)
